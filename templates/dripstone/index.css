@@ -710,14 +710,17 @@ body {
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 300px); 
-  justify-content: center; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
 }
 
 /* ---- product-card ---- */
 .product-card {
+  flex: 0 0 300px;
+  /* keep everything else in this rule as-is */
   position: relative;
   height: 460px;
   border-radius: 14px;
