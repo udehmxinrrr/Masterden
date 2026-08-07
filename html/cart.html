@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DripStone - Your Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Bebas+Neue&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-mark">D</span>
+      <span class="brand-name">DripStone</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../html/index.html">Home</a></li>
+      <li><a href="../html/index.html#products-section">Shop</a></li>
+      <li><a href="../html/index.html#offer-section">Offers</a></li>
+      <li><a href="../html/index.html#subscribe">Subscribe</a></li>
+    </ul>
+
+    <div class="search-wrap">
+    </div>
+
+    <div class="nav-icons">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+<main class="cart-page">
+  <h1 class="cart-title">YOUR <span class="accent">BAG.</span></h1>
+
+  <div class="cart-layout" id="cartLayout">
+
+    <div class="cart-items" id="cartItems">
+    </div>
+
+    <aside class="order-summary" id="orderSummary">
+    </aside>
+
+  </div>
+
+  <div class="cart-empty" id="cartEmpty" hidden>
+    <h2 class="cart-empty-headline">BAG'S <span class="outline">EMPTY.</span></h2>
+    <p class="cart-empty-sub">Nothing reserved yet. The drop won't wait.</p>
+    <a href="../html/index.html#products-section" class="btn-primary">
+      Shop the Drop
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <br>
+    <a href="../html/index.html#offer-section" class="btn-primary">
+      Max on Offers
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</main>
+
+<div class="mobile-checkout-bar" id="mobileCheckoutBar">
+  <p class="mobile-checkout-label">ORDER SUMMARY</p>
+  <div class="mobile-checkout-row">
+    <div class="mobile-checkout-total">
+      <span>TOTAL</span>
+      <strong id="mobileSummaryTotal">0.00</strong>
+    </div>
+    <button class="btn-checkout" id="mobileCheckoutBtn">Checkout</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">Drip<span>Stone</span></a>
+      <p>Considered goods, built to last. Leather, steel, and honest materials, sourced with care.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="social-icon">
+          <img class="icon-default" src="https://cdn.simpleicons.org/instagram/C6F135" alt="Instagram" width="16" height="16">
+          <img class="icon-hover" src="https://cdn.simpleicons.org/instagram/0E1A17" alt="" width="16" height="16">
+        </a>
+        <a href="#" aria-label="Facebook" class="social-icon">
+          <img class="icon-default" src="https://cdn.simpleicons.org/facebook/C6F135" alt="Facebook" width="16" height="16">
+          <img class="icon-hover" src="https://cdn.simpleicons.org/facebook/0E1A17" alt="" width="16" height="16">
+        </a>
+        <a href="#" aria-label="X / Twitter" class="social-icon">
+          <img class="icon-default" src="https://cdn.simpleicons.org/x/C6F135" alt="X" width="16" height="16">
+          <img class="icon-hover" src="https://cdn.simpleicons.org/x/0E1A17" alt="" width="16" height="16">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="/shop.html">All products</a></li>
+        <li><a href="/shop.html">Bags</a></li>
+        <li><a href="/shop.html">Footwear</a></li>
+        <li><a href="/shop.html">Watches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="#">Shipping and Returns</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Stay in touch</h4>
+      <ul class="footer-contact">
+        <li>Nairobi, Kenya</li>
+        <li>DripStone.co.ke</li>
+        <li>+254 700 000 000</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 DripStone. All rights reserved.</p>
+    <ul class="footer-legal">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../javascript/sanity.js"></script>
+<script src="../javascript/cart.js"></script>
+<script src="../javascript/index.js"></script>
+</body>
+</html>
