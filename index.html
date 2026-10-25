@@ -3,82 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustered</title>
+    <title>Masterden</title>
     <link rel="stylesheet" href="mustered.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
 
-<section class="nav-section">
-    <div class="logo">
-        <a href="#herosection">Mustered</a>
-    </div>
-    <div class="links">
-        <a href="#Collection">Templates</a>
-    </div>
-</section>
 
 <section class="hero" id="herosection">
-    <div class="hero-text">
-        <p>
-            Get a Website that Introduces You to The Internet with a Bang!
-        </p>
+    <p> <img src="./assets/Masterdom-logo.svg" alt=""> Masterden</p>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            <p class="eyebrow">Website templates</p>
+            <h1>Built on solid ground.</h1>
+            <p class="subhead">Premium website templates for personal brands that care how they're seen.</p>
+
+            <div class="hero-actions">
+            <a href="#Collection" class="btn-primary">Browse templates</a>
+            </div>
+
+            <p class="trust">Clean code · Fully responsive · CMS Capability</p>
+        </div>
+
+        <div class="hero-image">
+            <img src="./assets/website-images/canva.png" alt="Preview of a Masterdom website template">
+            <img src="./assets/website-images/Screenshot 2026-09-25 at 13-51-27 Document.png" alt="Preview of a Masterdom website template">
+        </div>
     </div>
 </section>
 
 <section class="templates" id="Collection">
     <h1 class="template-text">Explore the Collection</h1>
+
     <div class="template-grid">
-
-        <div class="template-card">
-
-            <div class="viewport-toggle" id="tcToggle" data-view="desktop">
-                <div class="pill"></div>
-                <button class="active" data-set="desktop">Desktop</button>
-                <button data-set="mobile">Mobile</button>
+        <article class="template-card">
+            <div class="img-container">
+                <img class="product-img" src="./assets/website-images/canva.png" alt="DripStone template preview">
             </div>
-            
-            <div class="product" id="tcProduct" data-view="desktop">
-                <div class="preview-frame" id="tcFrame">
-                <!--
-                    Local preview path below (works because this file sits next to
-                    your copied html/css/javascript folders). On Vercel, change this
-                    to your root-relative path, e.g.:
-                    src="/templates/dripstone/html/index.html"
-                -->
-                <iframe id="tcIframe" src="./templates/dripstone/dripstone.html" title="DripStone preview" tabindex="-1"></iframe>
-                </div>
-            </div>
-            
             <div class="desc">
-                <p class="desc-eyebrow">Streetwear Commerce Kit</p>
-                <h2 class="desc-title">DripStone — Full Store Template</h2>
-                <p class="desc-copy">A complete drop-culture storefront: hero, product grid, cart, and checkout flow, ready to connect to your own catalog.</p>
-                <p class="desc-warning"> * Please be advised that the products shown are not on sale on this website, nor do the prices intend to reflect or mirror the market prices of the products featured. They are featured strictly for display purposes. <br> * Images have been sourced from royalty free websites.</p>
-                <div class="desc-footer">
-                <span class="price">$49</span>
-                <button class="get-btn" onclick="window.open('./templates/dripstone/dripstone.html','_blank')">View live site</button>
-                <a href="https://payhip.com/b/y53rk" class="buy-btn" target="_blank" rel="noopener noreferrer">Buy Template</a>
+                <span class="tag">E-commerce</span>
+                <h3 class="card-title">DripStone</h3>
+
+                <div class="price-and-CTA">
+                    <div class="price">
+                        <span class="price-label">One-time</span>
+                        <p>$49</p>
+                    </div>
+                    <a href="https://your-demo-link.com" target="_blank" rel="noopener" class="live-btn">View Live Site</a>
+                    <a href="" class="CTA-button">Buy Template</a>
                 </div>
+                
             </div>
-        </div>
+        </article>
+
+       <article class="template-card">
+            <div class="img-container">
+                <img class="product-img" src="./assets/website-images/Screenshot 2026-09-25 at 13-51-27 Document.png" alt="DripStone template preview">
+            </div>
+            <div class="desc">
+                <span class="tag">E-commerce</span>
+                <h3 class="card-title">DripStone</h3>
+
+                <div class="price-and-CTA">
+                    <div class="price">
+                        <span class="price-label">One-time</span>
+                        <p>$49</p>
+                    </div>
+                    <a href="https://your-demo-link.com" target="_blank" rel="noopener" class="live-btn">View Live Site</a>
+                    <a href="" class="CTA-button">Buy Template</a>
+                </div>
+                
+            </div>
+        </article>
+        
+        <article class="template-card">
+            <div class="img-container">
+                <img class="product-img" src="./assets/website-images/canva.png" alt="DripStone template preview">
+            </div>
+            <div class="desc">
+                <span class="tag">E-commerce</span>
+                <h3 class="card-title">DripStone</h3>
+
+                <div class="price-and-CTA">
+                    <div class="price">
+                        <span class="price-label">One-time</span>
+                        <p>$49</p>
+                    </div>
+                    <a href="https://your-demo-link.com" target="_blank" rel="noopener" class="live-btn">View Live Site</a>
+                    <a href="" class="CTA-button">Buy Template</a>
+                </div>
+                
+            </div>
+        </article>
+
+        <article class="template-card">
+            <div class="img-container">
+                <img class="product-img" src="./assets/website-images/Screenshot 2026-09-25 at 13-51-27 Document.png" alt="DripStone template preview">
+            </div>
+            <div class="desc">
+                <span class="tag">E-commerce</span>
+                <h3 class="card-title">DripStone</h3>
+
+                <div class="price-and-CTA">
+                    <div class="price">
+                        <span class="price-label">One-time</span>
+                        <p>$49</p>
+                    </div>
+                    <a href="https://your-demo-link.com" target="_blank" rel="noopener" class="live-btn">View Live Site</a>
+                    <a href="" class="CTA-button">Buy Template</a>
+                </div>
+                
+            </div>
+        </article>
+
+        <article class="template-card">
+            <div class="img-container">
+                <img class="product-img" src="./assets/website-images/Screenshot 2026-09-25 at 13-51-27 Document.png" alt="DripStone template preview">
+            </div>
+            <div class="desc">
+                <span class="tag">E-commerce</span>
+                <h3 class="card-title">DripStone</h3>
+
+                <div class="price-and-CTA">
+                    <div class="price">
+                        <span class="price-label">One-time</span>
+                        <p>$49</p>
+                    </div>
+                    <a href="https://your-demo-link.com" target="_blank" rel="noopener" class="live-btn">View Live Site</a>
+                    <a href="" class="CTA-button">Buy Template</a>
+                </div>
+                
+            </div>
+        </article>
+    </div>
+
+    <div class="disclaimer">
+        <p>* Products shown are not on sale on this website, and prices do not reflect market prices. They are featured strictly for display purposes only. Masterden has no affiliation whatsoever with the brands or products on display. Images have been sourced from royalty-free websites.</p>
     </div>
 </section>
 
-<section class="footer">
+<footer class="footer">
   <div class="footer-top">
-    <div class="footer-logo">
-      <h1>Mustered</h1>
+    <div class="footer-cta">
+      <p class="footer-label">Have a project in mind?</p>
+      <a href="mailto:hello@masterden.co" class="footer-mail">hello@masterden.co <span>↗</span></a>
     </div>
     <nav class="footer-nav">
       <a href="#Collection">Shop</a>
-      <a href="mailto:hello@mustered.co">Contact</a>
+      <a href="mailto:hello@masterden.co">Contact</a>
+      <a href="#herosection">Back to top </a>
     </nav>
   </div>
-  <div class="footer-inner">
-    <p>&copy; 2026 Mustered. All rights reserved.</p>
-  </div>
-</section>
+
+  <p class="footer-wordmark" aria-hidden="true">Masterden</p>
+
+  <p class="footer-legal">&copy; 2026 Masterden. All rights reserved.</p>
+</footer>
 
 
 <script>
@@ -104,6 +185,7 @@
         const scale = product.clientWidth / w;
         frame.style.transform = 'scale(' + scale + ')';
     }
+
 
     // On browser resize, re-measure instead of reusing the old height
     window.addEventListener('resize', measureAndApply);
@@ -158,6 +240,29 @@
 
     measureAndApply();
     })();
+</script>
+
+
+<script>
+    /* ---- footer wordmark -----*/
+(function () {
+  const footer = document.querySelector('.footer');
+  const wm = footer.querySelector('.footer-wordmark');
+
+  function fitWordmark() {
+    const cs = getComputedStyle(footer);
+    const available =
+      footer.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+
+    wm.style.fontSize = '100px';                        // measure at a known size
+    const natural = wm.getBoundingClientRect().width;
+    wm.style.fontSize = Math.min(100 * available / natural, 320) + 'px'
+  }
+
+  fitWordmark();
+  document.fonts.ready.then(fitWordmark);               // re-fit once your custom font has loaded
+  window.addEventListener('resize', fitWordmark);
+})();
 </script>
      
 </body>
