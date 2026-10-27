@@ -18,6 +18,9 @@ html{
   scroll-behavior: smooth;
   font-size: clamp(16px, 0.6vw + 7px, 22px);
 }
+title{
+  color: var(--accent);
+}
 
 
 
@@ -187,9 +190,6 @@ a{
   height: 0.7em;           /* fallback for older browsers */
   height: 1cap;            /* exactly the height of the capital letters */
   width: auto;
-  background-color: rgba(242, 133, 0, 1);
-  -webkit-mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
-  mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
 }
 /* stack the logo above the hero content without pushing the hero past one screen */
 .hero {
@@ -637,9 +637,6 @@ a{
   height: 20px;
   width: 28px;
   flex-shrink: 0;
-  background-color: rgba(242, 133, 0, 1);
-  -webkit-mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
-  mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
 }
 .footer-legal {
   margin: 0; /* keeps the text vertically centred with the logo */
