@@ -1,0 +1,49 @@
+/* ---------- MOBILE: giant stacked type + peeking preview ---------- */
+@media (max-width: 800px) {
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 24px var(--gutter) 0;
+  }
+
+  /* one word per line, huge */
+  .hero-text h1 {
+    text-transform: uppercase;
+    width: min-content;            /* shrinks to the longest word, so each word wraps */
+    font-size: clamp(3rem, 18vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem !important;
+  }
+  .hero-text h1 .accent { color: var(--accent); }
+
+  .subhead {
+    max-width: 30ch;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* full-width thumb-friendly button */
+  .hero-actions { margin-bottom: 1.5rem; }
+  .btn-primary {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-left: 0;                /* cancels your global a { margin-left: 7px } */
+    padding: 1rem 1.6rem;
+  }
+
+  /* single preview, cut off by a fade so it looks like it continues */
+  .hero-image {
+    display: none;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;          /* shows the header of the template */
+    border-radius: 16px 16px 0 0;
+  }
+  .hero-image img:nth-child(2) { display: none; }
+}

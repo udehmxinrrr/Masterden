@@ -81,11 +81,6 @@ html{
   text-align: left;               /* cancels the inherited centering */
   max-width: clamp(34rem, 38vw, 60rem);
 }
-.hero > p {
-  max-width: var(--max);
-  padding: 28px var(--gutter) 0;
-  font-size: clamp(2.2rem, 2.2vw, 3.2rem);
-}
 .hero-text p,
 .hero-text h1 {
   margin: 0; 
@@ -181,15 +176,20 @@ a{
   margin: 0 auto;                        /* same centring */
   padding: 28px var(--gutter) 0;               /* same 60px side padding as .hero-content */
   font-family: "BricolageGrotesque - Condensed-Semibold", sans-serif;
-  font-size: 2.2rem;
+  font-size: clamp(2.2rem, 2.2vw, 3.2rem);
   line-height: 1;
   letter-spacing: 0.01em;
   color: var(--text);
+  color: rgba(242, 133, 0, 1);
+  justify-content: center;
 }
 .hero > p img {
   height: 0.7em;           /* fallback for older browsers */
   height: 1cap;            /* exactly the height of the capital letters */
   width: auto;
+  background-color: rgba(242, 133, 0, 1);
+  -webkit-mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
+  mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
 }
 /* stack the logo above the hero content without pushing the hero past one screen */
 .hero {
@@ -204,6 +204,8 @@ a{
 .hero-image {
   height: calc(100dvh - 200px);
 }
+
+
 @media (max-width: 600px) {
   .hero > p {
     padding: 20px 24px 0;
@@ -211,6 +213,88 @@ a{
   }
 }
 
+
+@media (min-width: 801px) {
+
+  /* warm glow in the corner instead of a flat black */
+  .hero {
+    background-image:
+      radial-gradient(55% 60% at 85% 45%, rgba(242, 133, 0, 0.22), transparent 70%),
+      radial-gradient(40% 40% at 10% 100%, rgba(242, 133, 0, 0.10), transparent 70%);
+  }
+
+
+  /* bigger, tighter headline with one orange word */
+  .hero-text { max-width: clamp(36rem, 48vw, 70rem); }
+  .hero-text h1 {
+    font-size: clamp(3.5rem, 7vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  .hero-text h1 .accent {
+    color: var(--accent);
+    text-shadow: 0 0 40px rgba(242, 133, 0, 0.45);
+  }
+
+
+  /* button with glow and an arrow that slides */
+  .btn-primary {
+    padding: 1.05rem 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  }
+  .btn-primary::after {
+    display: inline-block;
+    margin-left: 0.6em;
+    transition: transform 0.2s ease;
+  }
+
+  /* previews: tilted, staggered, glowing */
+  .hero-image {
+    position: relative;
+    overflow: visible;            /* so the tilt isn't clipped */
+  }
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 5% -15%;
+    background: radial-gradient(circle, rgba(242, 133, 0, 0.5), transparent 65%);
+    filter: blur(50px);
+    z-index: -1;
+  }
+  .hero-image img {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    transition: transform 0.35s ease;
+  }
+  .hero-image img:nth-child(1) { transform: rotate(-3deg); }
+  .hero-image img:nth-child(2) { transform: translateY(2.5rem) rotate(3deg); }
+
+  /* trust line pops a little more */
+  .trust {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+
+  /* templates: bottom half of the same glow, continues from the hero's edge */
+  .templates {
+    background-image:
+      radial-gradient(circle 45vw at 10% 0, rgba(242, 133, 0, 0.10), transparent 70%),
+      radial-gradient(circle 35vw at 90% 100%, rgba(242, 133, 0, 0.07), transparent 70%);
+  }
+  /* cards pick up the same orange so they feel part of it */
+  .template-card {
+    box-shadow: 0 25px 70px rgba(242, 133, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+  /* footer: continues the glow from the bottom-right of the templates section */
+  .footer {
+    background-image:
+      radial-gradient(circle 35vw at 90% 0, rgba(242, 133, 0, 0.07), transparent 70%),
+      radial-gradient(circle 40vw at 50% 100%, rgba(242, 133, 0, 0.12), transparent 70%);
+  }
+}
 
 
 .templates {
@@ -249,9 +333,10 @@ a{
   flex: 0 0 auto;
   width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
   max-width: 100%;  
-  padding: 10px;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(242, 239, 230, 0.06), rgba(242, 133, 0, 1));
+  container-type: inline-size;
+  border: 1px solid rgba(242, 133, 0, 1);
+  background: rgba(242, 133, 0, 1);
   -webkit-backdrop-filter: blur(14px) saturate(90%);
   backdrop-filter: blur(14px) saturate(90%);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -260,22 +345,22 @@ a{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
   padding: 20px 12px 12px;
 }
 .tag {
   font-family: "BricolageGrotesque-ExtraBold", sans-serif;
-  font-size: 0.7rem;
+  font-size: clamp(0.7rem, 3.4cqi, 1rem);
+  padding: 0.5em 1.1em;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--bg);
   border: 1px solid var(--bg);
-  padding: 4px 10px;
   border-radius: 999px;
 }
 .card-title {
   font-family: "BricolageGrotesque-ExtraBold", sans-serif;
-  font-size: 1.7rem;
+  font-size: clamp(1.6rem, 9cqi, 2.6rem);
+  margin: 0.4em 0;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--bg);
@@ -288,8 +373,9 @@ a{
 }
 .price-and-CTA {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem 1rem;
   width: 100%;
   margin-top: 14px;
   padding-top: 18px;
@@ -304,24 +390,25 @@ a{
 .live-btn {
   justify-content: center;
   text-align: center;
-  margin-left: 0;
   white-space: nowrap;
-  font-size: clamp(0.6rem, 2.9cqw, 0.95rem);
+  margin-left: 0;                   /* cancels your global a { margin-left: 7px } */
+  font-size: clamp(0.85rem, 4.2cqi, 1.2rem);
+  white-space: nowrap;
   padding: 0.7rem 0.5rem; 
 }
 .price-label {
   display: block;
   white-space: nowrap; 
   font-family: system-ui, sans-serif;
-  font-size: 0.7rem;
+  font-size: clamp(0.75rem, 3.4cqi, 1rem);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bg);
 }
 .price p {
   font-family: "BricolageGrotesque-ExtraBold", sans-serif;
-  font-size: 2rem;
-  line-height: 1.1;
+  margin: 0;
+  font-size: clamp(2rem, 11cqi, 3.2rem);
   color: var(--bg);
 }
 .CTA-button {
@@ -329,7 +416,7 @@ a{
   align-items: center;
   gap: 8px;
   margin-left: 0;
-  padding: 0.75rem 1.4rem;
+  padding: 0.9em 1.5em;
   border-radius: 999px;
   background: var(--bg);
   color: var(--accent-hover);
@@ -351,7 +438,8 @@ a{
   justify-content: center;
   gap: 8px;
   width: 100%;
-  margin-left: 0;                       /* cancels your global a { margin-left: 7px } */
+  margin-left: 0;
+  border: 1px solid var(--bg);
   padding: 0.75rem 1.4rem;
   border-radius: 999px;
   color: var(--bg);
@@ -380,7 +468,8 @@ a{
 .img-container {
   aspect-ratio: 4 / 4;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 24px ;
+
 }
 .product-img {
   display: block;
@@ -410,6 +499,13 @@ a{
 @media (max-width: 640px) {
   .template-grid { --cols: 1; }
 }
+@container (max-width: 340px) {
+  .price { flex: 1 1 100%; }
+  .CTA-button {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
 
 
 
@@ -418,7 +514,7 @@ a{
   position: relative;
   overflow: hidden;
   padding: 90px var(--gutter) 28px;
-  background: var(--bg);
+  background-color: var(--bg); 
   font-family: "Inter-SemiBold", system-ui, sans-serif;
 }
 .footer::before {
@@ -471,7 +567,6 @@ a{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
 }
 .footer-nav a {
   margin-left: 0;
@@ -491,8 +586,7 @@ a{
   text-align: center;
   white-space: nowrap;
   font-family: "BricolageGrotesque-ExtraBold", sans-serif;
-  font-size: 15vw;                      /* scales with the screen width */
-  line-height: 0.8;
+  font-size: 15vw;
   letter-spacing: -0.04em;
   background: linear-gradient(180deg, var(--text) 25%, rgba(242, 133, 0, 1) 87%);
   -webkit-background-clip: text;
@@ -500,6 +594,31 @@ a{
   color: transparent;
   -webkit-user-select: none;
   user-select: none;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+}
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 44px;                 /* comfortable thumb target */
+  height: 44px;
+  margin-left: 0;              /* cancels your global a { margin-left: 7px } */
+  color: var(--accent);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+}
+.footer-social a:hover {
+  color: var(--text);
+  transform: translateY(-3px);
 }
 .footer-legal {
   max-width: var(--max);
@@ -514,9 +633,10 @@ a{
   gap: 16px;
 }
 .footer-logo {
-  height: 20px;
-  width: auto;
   display: block;
+  height: 20px;
+  width: 28px;
+  flex-shrink: 0;
   background-color: rgba(242, 133, 0, 1);
   -webkit-mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
   mask: url("./assets/Masterdom-logo.svg") no-repeat center / contain;
@@ -524,10 +644,66 @@ a{
 .footer-legal {
   margin: 0; /* keeps the text vertically centred with the logo */
 }
+
+
 @media (max-width: 700px) {
   .footer { padding: 60px 24px 24px; }
-  .footer-nav { align-items: flex-end; }
+  /* contact group stacked above the nav */
+  .footer-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+  .footer-label {
+    font-size: clamp(0.7rem, 3vw, 0.85rem);
+    letter-spacing: 0.22em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-mail {
+    font-size: clamp(1.25rem, 6vw, 1.8rem);   /* stays on one line */
+    overflow-wrap: anywhere;
+  }
+  .footer-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(242, 239, 230, 0.15);
+  }
+  .footer-nav a:last-child {
+    margin-left: 0;
+    color: var(--accent);
+  }
+  /* breathing room around the wordmark */
+  .footer-wordmark {
+    margin: 2rem auto 1.75rem;
+  }
+  /* divider above the copyright row */
+  .footer-bottom {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(242, 239, 230, 0.15);
+  }
 }
+
+/*---Styling while footer-cta is hidden---*/
+.footer-top {
+  justify-content: center;
+}
+.footer-nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 2rem;
+}
+.footer-nav a:last-child {
+  margin-left: 0;             /* cancels the push to the right */
+}
+
+
+
 
 /* =====================================================
    RESPONSIVE
