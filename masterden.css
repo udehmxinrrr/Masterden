@@ -151,10 +151,11 @@ title{
 /* ---------- image column ---------- */
 .hero-image {          
   overflow: hidden;
-  display: flex;              /* puts the images side by side */
+  display: flex;
   align-items: flex-start;
-  gap: 1.25rem;               /* space between the two images */
-  height: calc(100vh - 150px);
+  gap: 1.25rem;
+  height: min(calc(100dvh - 200px), 50vw);
+  gap: clamp(0.6rem, 1.2vw, 1.25rem);
 }
 .hero-image img {
   height: 100%;
@@ -200,9 +201,6 @@ a{
   flex: 1;
   min-height: 0;
   padding-top: 40px;
-}
-.hero-image {
-  height: calc(100dvh - 200px);
 }
 
 
