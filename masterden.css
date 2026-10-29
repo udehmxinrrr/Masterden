@@ -482,6 +482,22 @@ a{
 .img-container:hover .product-img {
   animation-play-state: running;
 }
+.scroll-hint {
+  font-family: "BricolageGrotesque-ExtraBold", sans-serif;
+  align-self: center;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* Default (touch devices): show the tap text */
+.hint-hover { display: none; }
+.hint-touch { display: inline; }
+
+/* Devices with a real mouse: show the hover text instead */
+@media (hover: hover) and (pointer: fine) {
+  .hint-touch { display: none; }
+  .hint-hover { display: inline; }
+}
 @keyframes preview-scroll {
   0%       { object-position: 50% 0%; }     /* top: starts scrolling immediately */
   39.474%  { object-position: 50% 100%; }   /* scrolls down over 15s */
